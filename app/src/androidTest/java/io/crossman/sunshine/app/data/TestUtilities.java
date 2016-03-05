@@ -13,8 +13,6 @@ import android.test.AndroidTestCase;
 import java.util.Map;
 import java.util.Set;
 
-import io.crossman.sunshine.app.utils.PollingCheck;
-
 /*
     Students: These are functions and some test data to make it easier to test your database and
     Content Provider.  Note that you'll want your WeatherContract class to exactly match the one
@@ -135,7 +133,7 @@ public class TestUtilities extends AndroidTestCase {
             // It's useful to look at the Android CTS source for ideas on how to test your Android
             // applications.  The reason that PollingCheck works is that, by default, the JUnit
             // testing framework is not running on the main Android application thread.
-            new PollingCheck(5000) {
+            new io.crossman.sunshine.app.utils.PollingCheck(5000) {
                 @Override
                 protected boolean check() {
                     return mContentChanged;
